@@ -43,8 +43,15 @@ These are **descriptive findings** from one dataset. They should not be converte
 ## Notebook
 
 - **Repository notebook:** [hr_attrition_analysis.ipynb](./hr_attrition_analysis.ipynb)
-- **Legacy filename retained:** `jinx-s-ibm-hr-worksheet (1).ipynb` — superseded by the canonical notebook name above.
 - **Kaggle version:** [View the notebook on Kaggle](https://www.kaggle.com/code/jinxraven/jinx-s-ibm-hr-worksheet)
+
+## Run locally
+
+1. Install dependencies with `pip install -r requirements.txt`.
+2. Place the public IBM HR CSV at `data/WA_Fn-UseC_-HR-Employee-Attrition.csv`.
+3. Open `hr_attrition_analysis.ipynb`.
+
+The notebook also detects the original Kaggle input path automatically.
 
 ## Tech stack
 
@@ -57,6 +64,7 @@ These are **descriptive findings** from one dataset. They should not be converte
 
 ## What this project demonstrates
 
+- reproducible data loading and inspection,
 - data inspection and preprocessing,
 - exploratory data analysis,
 - group-level rate calculation,
