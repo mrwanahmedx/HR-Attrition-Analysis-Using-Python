@@ -1,0 +1,42 @@
+name: Notebook CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "hr_attrition_analysis.ipynb"
+      - "data/**"
+      - ".github/workflows/notebook-ci.yml"
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  notebook-hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate notebook JSON and hygiene
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("hr_attrition_analysis.ipynb")
+          notebook = json.loads(path.read_text(encoding="utf-8"))
+          code = [c for c in notebook["cells"] if c.get("cell_type") == "code"]
+
+          assert all(not c.get("outputs") for c in code), "Stored notebook outputs are not allowed"
+          assert all(c.get("execution_count") is None for c in code), "Execution counts must be cleared"
+
+          source = "\n".join("".join(c.get("source", [])) for c in code)
+          assert "plt.title =" not in source and "plt.title=(" not in source, "Plot title regression detected"
+          print(f"Notebook hygiene OK: {len(code)} code cells")
+          PY
+      - name: Ensure public dataset is not redistributed
+        run: test ! -f data/WA_Fn-UseC_-HR-Employee-Attrition.csv
