@@ -1,35 +1,84 @@
-# HR ATTRITION ANALYSIS USING PYTHON
-## You can view the notebook live by clicking [here](https://www.kaggle.com/code/jinxraven/jinx-s-ibm-hr-worksheet)
-## Overview
-- Exploratory data analysis project focused on employee attrition
-- Uses the IBM HR Analytics dataset
-- Aims to identify patterns and drivers of employee turnover
+# HR Attrition Analysis in Python
 
-## Analysis Objectives
-- Understand key factors influencing attrition
-- Analyze relationships between attrition and work conditions
-- Support HR retention and workforce planning decisions
+Exploratory analysis of employee attrition using the IBM HR Analytics dataset, focused on workforce segmentation, overtime, income, role, experience, and other variables associated with employee turnover.
 
-## Key Insights
-- Overtime shows a strong correlation with higher attrition
-- Lower income levels are linked with increased turnover
-- Certain job roles experience consistently higher attrition
-- Experience-related variables influence attrition behavior
+> This is an exploratory analytics project. The analysis identifies associations in the dataset; it does **not** establish causal drivers of attrition.
 
-## Analysis Workflow
-- Data loading and cleaning
-- Exploratory data analysis
-- Visualization of distributions and trends
-- Correlation analysis and interpretation
+## Business question
 
-## Skills Demonstrated
-- Data cleaning and preprocessing
-- Exploratory data analysis
-- Statistical correlation analysis
-- Business interpretation of analytical results
+Which workforce characteristics are associated with higher or lower attrition rates, and how does the story change when the same employee population is segmented in different ways?
 
-## Tools
+## Analysis workflow
+
+```mermaid
+flowchart LR
+    A[IBM HR dataset] --> B[Data inspection and cleaning]
+    B --> C[Univariate exploration]
+    C --> D[Segment comparisons]
+    D --> E[Attrition-rate analysis]
+    E --> F[Visualization]
+    F --> G[Business interpretation]
+```
+
+## Areas explored
+
+- overtime versus attrition,
+- monthly income and compensation patterns,
+- job-role differences,
+- experience and tenure variables,
+- department / workforce segmentation,
+- correlation and distribution analysis.
+
+## Key observations
+
+The notebook highlights patterns such as:
+
+- employees working overtime showing a higher attrition rate in this dataset,
+- lower-income groups displaying different turnover patterns,
+- some job roles showing visibly different attrition rates,
+- experience and tenure variables varying between employees who stayed and left.
+
+These are **descriptive findings** from one dataset. They should not be converted directly into HR policy without further validation, confounder analysis, and appropriate causal or experimental evidence.
+
+## Notebook
+
+- **Repository notebook:** [hr_attrition_analysis.ipynb](./hr_attrition_analysis.ipynb)
+- **Kaggle version:** [View the notebook on Kaggle](https://www.kaggle.com/code/jinxraven/jinx-s-ibm-hr-worksheet)
+
+## Tech stack
+
 - Python
-- Pandas and NumPy
-- Matplotlib and Seaborn
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
 - Jupyter Notebook
+
+## What this project demonstrates
+
+- data inspection and preprocessing,
+- exploratory data analysis,
+- group-level rate calculation,
+- distribution and correlation analysis,
+- translating statistical patterns into business-readable findings,
+- separating descriptive evidence from causal claims.
+
+## Limitations
+
+- cross-sectional exploratory analysis,
+- associations do not establish causality,
+- no production attrition model or intervention strategy is claimed,
+- results depend on the IBM HR dataset and may not generalize to other organizations,
+- demographic / fairness implications require separate analysis before operational use.
+
+## Related browser case study
+
+A companion interactive workforce view is included in **Data Observatory**, where the same population can be explored under different groupings.
+
+**[Open the browser case study](https://mrwanahmedx.github.io/data-observatory/people.html)**  
+**[View Data Observatory source](https://github.com/mrwanahmedx/data-observatory)**
+
+## Author
+
+**Marwan Ahmed**  
+[LinkedIn](https://www.linkedin.com/in/mrwan-ahmed/) · [GitHub](https://github.com/mrwanahmedx)
