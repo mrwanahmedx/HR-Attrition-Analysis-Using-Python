@@ -43,6 +43,7 @@ These are **descriptive findings** from one dataset. They should not be converte
 ## Notebook
 
 - **Repository notebook:** [hr_attrition_analysis.ipynb](./hr_attrition_analysis.ipynb)
+- **Legacy filename retained:** `jinx-s-ibm-hr-worksheet (1).ipynb` is kept only for repository history and is superseded by the maintained notebook above.
 - **Kaggle version:** [View the notebook on Kaggle](https://www.kaggle.com/code/jinxraven/jinx-s-ibm-hr-worksheet)
 
 ## Run locally
