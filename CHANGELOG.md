@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-09-26 — repository hygiene
+
+- Moved the superseded original notebook filename under `archive/` without rewriting its contents; `hr_attrition_analysis.ipynb` remains the single maintained analysis entry point.
+
+
 ## 2026-09-26
 
 - Reorganized the notebook into a recruiter-readable analytical flow.
